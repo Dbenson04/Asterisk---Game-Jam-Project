@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://dvh5bjjnpyp27"]
+
+[ext_resource type="Texture2D" uid="uid://dfq3py8mweosi" path="res://Assets/Sprites/Alchemist_Side_Right_Idle_spriteSheet.png" id="1_yikau"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcgq0"]
+atlas = ExtResource("1_yikau")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebymc"]
+atlas = ExtResource("1_yikau")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t03uw"]
+atlas = ExtResource("1_yikau")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0uua"]
+atlas = ExtResource("1_yikau")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrhuq"]
+atlas = ExtResource("1_yikau")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghigj"]
+atlas = ExtResource("1_yikau")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hect6"]
+atlas = ExtResource("1_yikau")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_71sls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcgq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebymc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t03uw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0uua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrhuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghigj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hect6")
+}],
+"loop": true,
+"name": &"Player_Idle",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5k7h"]
+size = Vector2(1.75, 3.625)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(189, 49)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_71sls")
+animation = &"Player_Idle"
+autoplay = "Player_Idle"
+frame_progress = 0.157318
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.125, 0.1875)
+shape = SubResource("RectangleShape2D_d5k7h")
